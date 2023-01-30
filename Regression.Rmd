@@ -1,0 +1,84 @@
+---
+title: "Regression"
+author: "Blessing Ildefonso"
+output: html_document
+---
+
+
+# Introduction
+
+This is about regression. We are going to perform regression analysis using the marketing data of the datarium in R.
+
+# The Data
+
+The marketing data has 200 observations and 4 variables namely: youtube, facebook, newspaper, and sales.
+
+
+```{r echo=FALSE, results='hide'}
+summary(marketing$youtube)
+summary(marketing$facebook)
+summary(marketing$newspaper)
+summary(marketing$sales)
+```
+
+
+# Loading Required R Packages
+
+```{r echo=FALSE, results='hide'}
+library(tidyverse)
+library(caret)
+theme_set(theme_bw())
+```
+
+```{r echo=FALSE, results='hide'}
+#install datrium if not yet installed at the console
+library(datarium) # loading datarium
+```
+
+
+# Preparing Data
+
+```{r echo=FALSE, results='hide'}
+# Load the data
+data("marketing", package = "datarium")
+# Inspect the data
+sample_n(marketing, 3)
+```
+
+
+```{r echo=FALSE, results='hide'}
+# Split the data into training and test set
+set.seed(123)
+training.samples <- marketing$sales %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train.data  <- marketing[training.samples, ]
+test.data <- marketing[-training.samples, ]
+```
+
+
+# Quick start R code
+
+```{r echo=FALSE, results='hide'}
+# Build the model
+model <- lm(sales ~., data = train.data)
+# Summarize the model
+summary(model)
+# Make predictions
+predictions <- model %>% predict(test.data)
+# Model performance
+# (a) Prediction error, RMSE
+RMSE(predictions, test.data$sales)
+# (b) R-square
+R2(predictions, test.data$sales)
+```
+
+
+```{r echo=FALSE, results='hide'}
+# predicting with new data
+youtube <- 10
+facebook <- 80
+newspaper <- 0
+
+a <- data.frame (youtube, facebook, newspaper)
+p <- model %>% predict(a)
+```
