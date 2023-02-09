@@ -1,0 +1,21 @@
+---
+title: "Quarto Assignment"
+author: "Blessing Ildefonso"
+output: html_document
+---
+
+1. What package are they talking about?
+Quarto
+
+2. Why is there a need to shift from rmarkdown with the said package?
+There is lot of differences between r markdown and quarto. One of it is When you shift from rmarkdown to quarto you cannot retrofit all old rmarkdown files wholesale but when you do your new project to quarto you can interoperate all the old r markdown. Quarto is designed to be compatible with existing formats. For example you can render most. R Markdown docs use R and knitr to render your doc, Quarto does not require R. Quarto runs computations into separate pluggable language "engines", which helps make this cross language functionality easier to support.Therefore, quarto is better than r markdown.
+
+3. What inspired/sparked the said shift?
+Quarto is a Python package that allows you to build, test, and deploy fast web APIs. One of the best things about the Quart package is its simplicity and ease of use.Another advantage of Quart is that it is designed for modern web development, with features such as request validation, support for WebSockets, and asynchronous request handling. 
+
+
+4. Are you up to the challenge of the said shift, learning it and applying it in your future career as math teachers?
+Learning and applying quatro in the field of education will help us in the future, when we teach our students someday. As future math teachers, learning is a continuous process changing nothing and sticking with what you know won’t make you a better teacher. All good teachers know: Learning doesn’t stop when you graduate college. Even though it's hard for me to understand how to use this package, I believe that no work is difficult for a patient person. Because patience is a virtue. Learning with this package, need patience and especially love, love on what you doing.
+
+5. What cool feature in the package did you like best? Please discuss, thanks.
+With quarto you can connect to github, you can work together. Quarto is a tool that enables us to kind of open up and share our process and the artifacts that come out in a way thats friendly to a broad range of data users. The collaboration of quarto and github it is easy to make replicas of a previous notebook. Github Actions useful for building and publishing Quarto documents.
